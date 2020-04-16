@@ -1,0 +1,11 @@
+tools:
+  jdk: 8
+  sonarscanner: sonarqube-8.2.0.32929
+  
+flows:
+  default:
+    -call: runsonar
+   
+runsonar:
+  - sonar("sonar"):
+     - sonar-scanner -Dproject.settings=sonar-project.properties
